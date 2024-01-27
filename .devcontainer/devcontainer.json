@@ -1,0 +1,35 @@
+{
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "nonroot",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ],
+      "settings": {
+        "python.testing.pytestArgs": [
+          "."
+        ],
+        "python.testing.unittestEnabled": false,
+        "python.testing.pytestEnabled": true,
+        "files.exclude": {
+          ".idea": true,
+          ".vscode": true,
+          "**/.venv/": true,
+          "**/*.egg-info": true,
+          "**/__pycache__": true,
+          ".DS_Store": true,
+          "**/.pytest_cache": true,
+          ".mypy_cache": true,
+          ".ruff_cache": true
+        },
+        "python.analysis.packageIndexDepths": [
+          {"name": "benchling_sdk", "depth": 8, "includeAllSymbols": true}
+        ]
+      }
+    }
+  }
+}

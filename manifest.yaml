@@ -1,0 +1,29 @@
+manifestVersion: 1
+
+info:
+  name: Sample Sync Marcelo G
+  version: 0.1.0
+settings:
+  lifecycleManagement: MANUAL
+features:
+  - name: Sync Step
+    id: sync_step
+    type: ASSAY_RUN
+
+configuration:
+  - name: Sync Folder
+    type: folder
+    description: The folder where synced chemical entities will be stored.
+    requiredConfig: true
+  - name: Molecule Schema
+    type: entity_schema
+    subtype: molecule
+    description: A chemical schema for molecules synced from PubChem.
+    requiredConfig: true
+    fieldDefinitions:
+      - name: Molecular Weight
+        type: float
+        requiredConfig: true
+      - name: MonoIsotopic
+        type: float
+        requiredConfig: true
